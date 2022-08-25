@@ -30,6 +30,7 @@ sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package
 # git clone https://github.com/panther706/luci-app-adguardhome package/luci-app-adguardhome
 # git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic package/luci-app-unblockneteasemusic
 # git clone https://github.com/sbwml/luci-app-adguardhome.git package/luci-app-adguardhome
+# git clone https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-passwall.git package/luci-app-passwall
 git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 git clone https://github.com/Boos4721/luci/tree/master/applications/luci-app-turboacc.git package/luci-app-turboacc
 
