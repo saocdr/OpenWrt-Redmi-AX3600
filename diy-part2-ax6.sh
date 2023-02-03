@@ -33,8 +33,8 @@ sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package
 # git clone https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-passwall.git package/luci-app-passwall
 # git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 # git clone https://github.com/Boos4721/luci/tree/master/applications/luci-app-turboacc.git package/luci-app-turboacc
-git clone https://github.com/immortalwrt/luci/tree/master/applications/luci-app-cpufreq package/luci-app-cpufreq
-rm -rf package/feeds/xiangfeidexiaohuo/luci-app-turboacc
+git clone https://github.com/immortalwrt/luci/tree/master/applications/luci-app-cpufreq.git package/luci-app-cpufreq
+# rm -rf package/feeds/xiangfeidexiaohuo/luci-app-turboacc
 
 # 添加核心温度的显示
 sed -i 's|pcdata(boardinfo.system or "?")|luci.sys.exec("uname -m") or "?"|g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
