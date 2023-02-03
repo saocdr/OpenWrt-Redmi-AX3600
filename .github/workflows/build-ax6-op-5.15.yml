@@ -13,12 +13,17 @@ name: Build AX6 OpenWRT (K5.15)
 on:
   repository_dispatch:
   workflow_dispatch:
+      inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
 #  schedule:
 #    - cron: 0 8 */5 * *
 
 env:
-  REPO_URL: https://github.com/robimarko/openwrt
-  REPO_BRANCH: ipq807x-5.15-pr
+  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: AX6-5.15.config
   DIY_P1_SH: diy-part1.sh
