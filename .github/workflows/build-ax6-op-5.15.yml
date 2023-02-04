@@ -13,7 +13,7 @@ name: Build AX6 OpenWRT (K5.15)
 on:
   repository_dispatch:
   workflow_dispatch:
-      inputs:
+    inputs:
       ssh:
         description: 'SSH connection to Actions'
         required: false
