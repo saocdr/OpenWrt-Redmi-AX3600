@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build AX3600 OpenWRT (K5.15)
+name: OpenWrt-AX3600-TEST (K5.15)
 
 on:
   repository_dispatch:
