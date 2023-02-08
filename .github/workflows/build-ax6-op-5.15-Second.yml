@@ -18,7 +18,7 @@ on:
 #    - cron: 0 8 */5 * *
 
 env:
-  REPO_URL: https://github.com/Boos4721/openwrt
+  REPO_URL: https://github.com/saocdr/openwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: AX6-5.15-Second.config
