@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build AX3600 OpenWRT (K5.15)
+name: build-AX3600-nss (K5.15)
 
 on:
   repository_dispatch:
@@ -20,10 +20,10 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/saocdr/openwrt
+  REPO_URL: https://github.com/bitthief/openwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: AX3600-5.15.config
+  CONFIG_FILE: AX3600-nss-5.15
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2-AX3600.sh
   UPLOAD_BIN_DIR: false
