@@ -24,7 +24,7 @@ sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_gener
 # git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/luci-theme-atmaterial
 # git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
-git clone https://github.com/sirpdboy/luci-app-netdata.git package/luci-app-netdata
+# git clone https://github.com/sirpdboy/luci-app-netdata.git package/luci-app-netdata
 
 # 添加额外软件包
 # git clone https://github.com/panther706/luci-app-adguardhome package/luci-app-adguardhome
