@@ -35,8 +35,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
-    timeout-minutes: 400
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout
@@ -48,7 +47,7 @@ jobs:
       run: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
-        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
+        sudo -E apt-get -qq install $(curl -fsSL is.gd/depends_ubuntu_2204)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
@@ -120,6 +119,12 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
+        cp openwrt/.config build.config
+        mkdir -p Packages
+        mv -f openwrt/bin/packages/*/*/*.ipk Packages
+        mv -f openwrt/bin/targets/*/*/packages/*.ipk Packages
+        tar -zcvf Packages.tar.gz Packages
+        mv *.config *.tar.gz openwrt/bin/targets/*/*
         cd openwrt/bin/targets/*/*
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
