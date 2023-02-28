@@ -119,8 +119,7 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
-        cp openwrt/.config build.config
-        mv *.config *.tar.gz openwrt/bin/targets/*/*        
+        cp openwrt/.config build.config    
         cd openwrt/bin/targets/*/*
         rm -rf packages feeds.buildinfo sha256sums profiles.json
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
