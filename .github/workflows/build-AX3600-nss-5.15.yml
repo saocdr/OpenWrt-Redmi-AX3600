@@ -26,6 +26,7 @@ env:
   CONFIG_FILE: configs/AX3600-nss-5.15.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2-AX3600.sh
+  USE_CACHEWRTBUILD: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -104,12 +105,10 @@ jobs:
     - name: Cache 缓存加速(7天内对应源码相同机型二次编译有效，每次只保留一个源码的缓存)
       uses: stupidloud/cachewrtbuild@main
       continue-on-error: true
-      if: env.CACHE_ACTIONS == 'true'
+      if: env.USE_CACHEWRTBUILD == 'true'
       with:
-        ccache: 'true'
-        clean: ${{env.CLEAN}}
-        mixkey: ${{env.IMG_NAME}}
-        prefix: ${{github.workspace}}/${{env.REPO_FLODER}}
+          ccache: true
+          prefix: ${{ github.workspace }}/openwrt
 
     - name: Download package
       id: package
