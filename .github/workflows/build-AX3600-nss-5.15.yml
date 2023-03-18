@@ -101,6 +101,16 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a -f
 
+    - name: Cache 缓存加速(7天内对应源码相同机型二次编译有效，每次只保留一个源码的缓存)
+      uses: stupidloud/cachewrtbuild@main
+      continue-on-error: true
+      if: env.CACHE_ACTIONS == 'true'
+      with:
+        ccache: 'true'
+        clean: ${{env.CLEAN}}
+        mixkey: ${{env.IMG_NAME}}
+        prefix: ${{github.workspace}}/${{env.REPO_FLODER}}
+
     - name: Download package
       id: package
       run: |
