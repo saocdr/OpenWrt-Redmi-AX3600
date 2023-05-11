@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/saocdr/bitthief-openwrt 
+  REPO_URL: https://github.com/saocdr/dimfishr-openwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: configs/AX3600-nss-5.15.config
