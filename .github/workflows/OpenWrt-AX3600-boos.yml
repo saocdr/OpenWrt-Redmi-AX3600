@@ -179,7 +179,7 @@ jobs:
       id: tag
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"AX3600-TEST-K5.15.%Y.%m.%d-%H%M")" >>$GITHUB_OUTPUT
+        echo "release_tag=$(date +"AX3600-boos-K5.15.%Y.%m.%d-%H%M")" >>$GITHUB_OUTPUT
         touch release.txt
         echo "status=success" >>$GITHUB_OUTPUT
 
