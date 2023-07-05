@@ -164,7 +164,7 @@ jobs:
         cp openwrt/.config build.config
         mv *.config  openwrt/bin/targets/*/*
         cd openwrt/bin/targets/*/*
-        rm -rf packages feeds.buildinfo sha256sums profiles.json
+        rm -rf packages feeds.buildinfo sha256sums profiles.json *.itb
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
