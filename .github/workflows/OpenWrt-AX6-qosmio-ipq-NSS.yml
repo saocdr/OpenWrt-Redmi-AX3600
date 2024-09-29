@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/qosmio/openwrt-ipq
+  REPO_URL: https://github.com/TerryLip/AX6NSS
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: configs/ax6-Immortalwrt-NSS.config
