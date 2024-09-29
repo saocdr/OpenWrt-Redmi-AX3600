@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: ax3600-Immortalwrt-NSS
+name: ax3600-qosmio-NSS
 
 on:
   repository_dispatch:
